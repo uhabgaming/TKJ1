@@ -1,0 +1,62 @@
+/* Contact Alert Styles */
+.contact-alert {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-100%);
+  background: var(--primary-color);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  z-index: 9999;
+  opacity: 0;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  pointer-events: none;
+}
+
+.contact-alert.show-alert {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.contact-alert::before {
+  content: '✓';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  font-size: 14px;
+}
+
+.contact-alert .alert-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contact-alert strong {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.contact-alert .text-muted {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-size: 0.85rem;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .contact-alert {
+    width: calc(100% - 32px);
+    padding: 14px 16px;
+    top: 16px;
+  }
+}

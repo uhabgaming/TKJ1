@@ -1,0 +1,17 @@
+/* Quick Search Styles */
+@media (max-width: 768px) {
+  .quick-nav {
+    bottom: 1rem;
+    right: 1rem;
+  }
+  
+  .quick-nav-content {
+    width: calc(100vw - 2rem);
+    right: -1rem;
+  }
+}
+
+.quick-nav-toggle {
+  position: relative;
+  z-index: 1001;
+}

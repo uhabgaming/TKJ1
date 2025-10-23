@@ -1,0 +1,30 @@
+/* Loading Optimizations */
+.gallery,
+.contact-section {
+  visibility: visible !important;
+}
+
+.popup_gallery.loading::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  border: 3px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Critical Elements */
+.gallery_title,
+.contact-form {
+  opacity: 1 !important;
+  transform: none !important;
+}
